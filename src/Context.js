@@ -36,7 +36,9 @@ function ContextProvider( { children } ) {
     } ) )
   }
 
-  console.log( cartItems )
+  const emptyCart = image => {
+    setCartitems( [] )
+  }
 
   return (
     <Context.Provider value={{
@@ -44,7 +46,8 @@ function ContextProvider( { children } ) {
       toggleFavorite,
       addToCart,
       cartItems,
-      removeFromCart
+      removeFromCart,
+      emptyCart
     }}>
       {children}
     </Context.Provider>
